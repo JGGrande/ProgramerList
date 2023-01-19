@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.flexSobre {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 50px auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.eu {
+    width: 450px;
+    height: 450px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.eu img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.infomacoes {
+    text-align: center;
+    width: 500px;
+    margin-left: 20px;
+}
+
+.cardSobre {
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.infomacoes h1,
+h2 {
+    font-family: Ubuntu;
+    margin-bottom: 10px;
+}
+
+.infomacoes h3,
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+.contato {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.contato p {
+    width: 200px;
+    height: 30px;
+    margin: 20px auto;
+    margin-left: 1.5rem;
+    padding-top: 10px;
+    background: linear-gradient(to right bottom, rgb(16, 18, 31), rgb(22, 29, 54), rgb(25, 41, 79), rgb(26, 53, 105), rgb(24, 65, 132), rgb(22, 71, 144), rgb(18, 76, 157), rgb(11, 82, 170), rgb(11, 82, 170), rgb(10, 81, 170), rgb(10, 81, 169), rgb(9, 80, 169));
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+.contato p a {
+    text-decoration: none;
+    font-family: ubuntu;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+.contato p:hover {
+    transform: scale(1.1);
+}

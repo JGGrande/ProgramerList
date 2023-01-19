@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.footer {
+    background: linear-gradient(to right bottom, rgb(16, 18, 31), rgb(22, 29, 54), rgb(25, 41, 79), rgb(26, 53, 105), rgb(24, 65, 132), rgb(22, 71, 144), rgb(18, 76, 157), rgb(11, 82, 170), rgb(11, 82, 170), rgb(10, 81, 170), rgb(10, 81, 169), rgb(9, 80, 169));
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: Ubuntu;
+    color: rgb(220, 221, 227);
+}
+
+.icons {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer h3 {
+    margin-top: 30px;
+}
+
+.icons ul li {
+    display: inline-block;
+}
+
+.icons ul li:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    height: 50px;
+    width: 50px;
+}

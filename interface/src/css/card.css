@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    width: 330px;
+    height: 450px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 9%) 0px 0px 3px 1px;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 1.25rem 0.5rem;
+
+}
+
+.containerImg {
+    width: 250px;
+    height: 250px;
+}
+
+.containerImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.card h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.4rem;
+    color: black;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.card h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.2rem;
+    color: rgb(54, 56, 67);
+    font-weight: 500;
+}
+
+.botoes {
+    margin-top: 10px;
+    display: flex;
+
+}
+
+.btn-edit {
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(107, 183, 11);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    display: flex;
+
+}
+
+.btn-delet {
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    background-color: red;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    display: flex;
+    margin-left: 15px;
+}
+
+.material-symbols-outlined {
+    padding-top: 6px;
+    padding-left: 2px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.btn-edit a {
+    text-decoration: none;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+.btn-delet a {
+    text-decoration: none;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
