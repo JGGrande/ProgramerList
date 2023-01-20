@@ -27,7 +27,7 @@ function Card(props) {
     return (
         <div className="card">
             <div className="containerImg">
-                <img src={"http://localhost:3000/programadores/" + `${img}`} alt="imagem do programador" />
+                <img src={"https://programer-list-requests.onrender.com/programadores/" + `${img}`} alt="imagem do programador" />
             </div>
             <h3>{nome}</h3>
             <h4>{idade} anos</h4>

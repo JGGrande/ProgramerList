@@ -65,7 +65,7 @@ function Editar_programador() {
         formData.append('categoria', select)
 
         //console.log(formData)
-        await axios.patch(`http://localhost:3000/atualizar_programador/${id}`, formData, {
+        await axios.patch(`https://programer-list-requests.onrender.com/atualizar_programador/${id}`, formData, {
             headers: { "Content-Type": "multipart/form-data" }
         })
             .then((Response) => {
@@ -83,7 +83,7 @@ function Editar_programador() {
 
     useEffect(() => {
         async function pegarCategorias() {
-            await axios.get("http://localhost:3000/categoria")
+            await axios.get("https://programer-list-requests.onrender.com/categoria")
                 .then((Response) => {
                     setCategoria(Response.data)
 

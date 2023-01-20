@@ -71,7 +71,7 @@ function Adiconar_Programador() {
         formData.append('categoria', select)
 
         //console.log(formData)
-        await axios.post("http://localhost:3000/adicionar_programador", formData, {
+        await axios.post("https://programer-list-requests.onrender.com/adicionar_programador", formData, {
             headers: { "Content-Type": "multipart/form-data" }
         })
             .then((Response) => {
@@ -88,7 +88,7 @@ function Adiconar_Programador() {
 
     useEffect(() => {
         async function pegarCategorias() {
-            await axios.get("http://localhost:3000/categoria")
+            await axios.get("https://programer-list-requests.onrender.com/categoria")
                 .then((Response) => {
                     setCategoria(Response.data)
 

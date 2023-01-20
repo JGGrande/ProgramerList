@@ -11,7 +11,7 @@ function Programadores() {
     const [dados, setDados] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:3000/programadores", busca)
+        axios.get("https://programer-list-requests.onrender.com/programadores", busca)
             .then((response) => {
                 console.log(response.data.programadores)
                 setDados(response.data.programadores)
@@ -31,7 +31,7 @@ function Programadores() {
                         if (!ev.target.value)
                             return console.log("vazio")
 
-                        axios.get(`http://localhost:3000/programadores/${busca}`,)
+                        axios.get(`https://programer-list-requests.onrender.com/programadores/${busca}`,)
                             .then((response) => {
                                 console.log(response.data.programadores)
                                 setDados(response.data.programadores)

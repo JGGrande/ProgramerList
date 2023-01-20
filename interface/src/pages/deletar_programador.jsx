@@ -7,7 +7,7 @@ function Deletar_programador() {
 
     const { id } = useParams();
 
-    axios.delete(`http://localhost:3000/deletar_programador/${id}`)
+    axios.delete(`https://programer-list-requests.onrender.com/deletar_programador/${id}`)
         .then((Response) => {
             console.log(Response)
         })

@@ -10,7 +10,7 @@ function App() {
   const [dados, setDados] = useState([])
 
   useEffect(() => {
-    axios.get("http://localhost:3000/")
+    axios.get("https://programer-list-requests.onrender.com")
       .then((response) => {
         setDados(response.data.dados)
       }).catch(() => {
