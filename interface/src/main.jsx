@@ -18,7 +18,7 @@ import Editar_programador from './pages/editar_programador'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Header />
-    <BrowserRouter basename='https://programer-list.netlify.app'>
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='/programadores' element={<Programadores />} />
