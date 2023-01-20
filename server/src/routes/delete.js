@@ -17,12 +17,16 @@ export default async function Delete(req, res) {
 
         //console.log(foto)
 
-        fs.unlink(`./src/app/uploads/${foto}`, (err => {
-            if (err) console.log(err)
-            else {
-                console.log("Deletado")
-            }
-        }));
+        try {
+            fs.unlink(`./src/app/uploads/${foto}`, (err => {
+                if (err) console.log(err)
+                else {
+                    console.log("Deletado")
+                }
+            }));
+        } catch (error) {
+            console.log(error)
+        }
 
     })
 

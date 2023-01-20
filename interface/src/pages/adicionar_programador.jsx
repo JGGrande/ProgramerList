@@ -3,13 +3,17 @@ import "../css/adicionar_programador.css"
 import { useForm } from "react-hook-form"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import Modal from "react-modal"
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 const validationPost = yup.object({
     nome: yup.string().required("Campo usuario não pode estar vazio!").max(200),
-    idade: yup.number().transform((value) => (isNaN(value) || value === null || value === undefined) ? 0 : value).required("Campo idade não pode estar vazio!").max(120),
+    idade: yup.number().transform((value) => (isNaN(value) || value === null || value === undefined) ? 0 : value).required("Campo idade não pode estar vazio!").max(120)
+        .test("Numeros negativos", "Não pode inserir numeros negativos!", value => {
+            return value && value > 0
+        }),
     categoria: yup.string().required("Campo categoria não pode estar vazio!"),
     foto: yup.mixed().test("fileSize", "Precisa selecionar um arquivo com menos de 5 MB! ", value => {
         return value && value[0].size <= 5000000;
@@ -31,6 +35,10 @@ function Adiconar_Programador() {
 
     const [imagem, setImagem] = useState('')
 
+    const [modalIsOpen, setIsOpen] = useState(false)
+
+    const [mensagem, setMensagem] = useState("Sucesso")
+
     /*const convet2base64 = file => {
         const render = new FileReader();
 
@@ -40,6 +48,17 @@ function Adiconar_Programador() {
 
         render.readAsDataURL(file)
     }*/
+
+
+    function openModal() {
+        setIsOpen(true)
+        fade.style.display = 'block'
+    }
+    function closeModal() {
+        setIsOpen(false)
+        const fade = document.querySelector("#fade")
+        fade.style.display = 'none'
+    }
 
     const addPost = async data => {
         const select = document.querySelector("#select").value
@@ -55,10 +74,12 @@ function Adiconar_Programador() {
         await axios.post("http://localhost:3000/adicionar_programador", formData, {
             headers: { "Content-Type": "multipart/form-data" }
         })
-            .then(() => {
-                console.log("deu certo")
-            }).catch(() => {
-                console.log("Deu errado")
+            .then((Response) => {
+                openModal()
+                setMensagem(Response.data.menssage)
+            }).catch((Response) => {
+                openModal()
+                setMensagem(Response.data.menssage)
             })
     }
     const [categoria, setCategoria] = useState([])
@@ -126,6 +147,24 @@ function Adiconar_Programador() {
                     </form>
                 </div>
             </div>
+            <div className="fade" id="fade">aaa</div>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                className="modal-content"
+                overlayClassName="modal-overlay"
+            >
+                <br />
+                <br />
+                <br />
+                <h1>{mensagem}</h1>
+                <br />
+                <br />
+                <br />
+                <p className="btnHome" >
+                    <a href="/">Home</a>
+                </p>
+            </Modal>
         </div>
     )
 }
