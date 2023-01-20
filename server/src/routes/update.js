@@ -1,4 +1,6 @@
 import DataBase from "../database/dbConection.js";
+
+
 export default async function Update(req, res) {
 
     const { id } = req.params
@@ -26,7 +28,7 @@ export default async function Update(req, res) {
 
         //});
         //res.send({ programadores: dados })
-        console.log(result, error)
+        //console.log(result, error)
     })
     res.send({ menssage: "Editado com sucesso!" })
 }
