@@ -157,7 +157,7 @@ function Editar_programador() {
                 <br />
                 <br />
                 <p className="btnHome" >
-                    <a href="/">Home</a>
+                    <a href="https://programer-list.netlify.app/">Home</a>
                 </p>
             </Modal>
 

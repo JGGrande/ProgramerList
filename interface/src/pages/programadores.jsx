@@ -45,7 +45,7 @@ function Programadores() {
             </div>
             <div className="containerBtn">
                 <p>
-                    <a href="/adicionar_programador">Adicionar Programador</a>
+                    <a href="https://programer-list.netlify.app/adicionar_programador">Adicionar Programador</a>
                 </p>
             </div>
             <div className="flex">

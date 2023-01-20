@@ -8,13 +8,13 @@ function Header() {
             <nav className="navbar" >
                 <ul>
                     <li>
-                        <a href="/"><strong>Home</strong></a>
+                        <a href="https://programer-list.netlify.app/"><strong>Home</strong></a>
                     </li>
                     <li>
-                        <a href="/programadores"><strong>Programadores</strong></a>
+                        <a href="https://programer-list.netlify.app/programadores"><strong>Programadores</strong></a>
                     </li>
                     <li>
-                        <a href="/sobre"><strong>Sobre</strong></a>
+                        <a href="https://programer-list.netlify.app/sobre"><strong>Sobre</strong></a>
                     </li>
 
                 </ul>

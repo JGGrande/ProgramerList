@@ -25,7 +25,7 @@ function Deletar_programador() {
                     <img src="../public/img/emoji_triste.jpg" alt="teste" />
                 </div>
                 <p className="btnHome">
-                    <a href="/">Home</a>
+                    <a href="https://programer-list.netlify.app/">Home</a>
                 </p>
             </div>
             <br />

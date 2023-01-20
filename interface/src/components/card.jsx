@@ -35,13 +35,13 @@ function Card(props) {
             <br />
             <div className="botoes">
                 <p className="btn-edit">
-                    <a href={"/editar_programador/" + props.id}><strong>Editar</strong></a>
+                    <a href={"https://programer-list.netlify.app/editar_programador/" + props.id}><strong>Editar</strong></a>
                     <span className="material-symbols-outlined">
                         edit
                     </span>
                 </p>
                 <p className="btn-delet" id="delete">
-                    <a href={"/deletar_programador/" + props.id}><strong>Deletar</strong></a>
+                    <a href={"https://programer-list.netlify.app/deletar_programador/" + props.id}><strong>Deletar</strong></a>
                     <span className="material-symbols-outlined">
                         delete
                     </span>

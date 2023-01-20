@@ -26,7 +26,7 @@ function Sobre() {
             <div className="contato">
                 <p><a href="https://www.linkedin.com/in/joao-gabriel-grande/" target="_blank">Linkedin</a></p>
                 <p><a href="https://github.com/JGGrande" target="_blank">GitHub</a></p>
-                <p><a href="" target="_blank" >Repositório do Projeto</a></p>
+                <p><a href="https://github.com/JGGrande/ProgramerList" target="_blank" >Repositório do Projeto</a></p>
             </div>
         </div>
     )

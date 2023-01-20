@@ -162,7 +162,7 @@ function Adiconar_Programador() {
                 <br />
                 <br />
                 <p className="btnHome" >
-                    <a href="/">Home</a>
+                    <a href="https://programer-list.netlify.app/">Home</a>
                 </p>
             </Modal>
         </div>
