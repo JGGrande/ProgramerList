@@ -32,7 +32,7 @@ function App() {
         })}
       </div>
       <p className='btnVerMais'>
-        <a href="https://programer-list.netlify.app/programadores">Ver todos! </a>
+        <a href="/programadores">Ver todos! </a>
       </p>
       <br />
     </div>
