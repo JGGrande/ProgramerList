@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 import Modal from "react-modal";
@@ -157,7 +157,7 @@ function Editar_programador() {
                 <br />
                 <br />
                 <p className="btnHome" >
-                    <a href="https://programer-list.netlify.app/">Home</a>
+                    <Link to="https://programer-list.netlify.app/">Home</Link>
                 </p>
             </Modal>
 

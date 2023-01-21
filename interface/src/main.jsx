@@ -17,9 +17,10 @@ import Editar_programador from './pages/editar_programador'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Header />
+
     <BrowserRouter>
       <Routes>
+        <Header />
         <Route path='/' element={<App />} />
         <Route path='/programadores' element={<Programadores />} />
         <Route path='/sobre' element={<Sobre />} />
@@ -27,7 +28,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/deletar_programador/:id' element={<Deletar_programador />} />
         <Route path='/editar_programador/:id' element={<Editar_programador />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
-    <Footer />
+
   </React.StrictMode>,
 )

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import './App.css'
 import Card from './components/card'
@@ -32,7 +33,7 @@ function App() {
         })}
       </div>
       <p className='btnVerMais'>
-        <a href="/programadores">Ver todos! </a>
+        <Link to="/programadores">Ver todos! </Link>
       </p>
       <br />
     </div>

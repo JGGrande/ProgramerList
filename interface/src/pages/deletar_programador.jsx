@@ -1,7 +1,7 @@
 import "../css/deletar_programador.css"
 
 import axios from "axios"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 function Deletar_programador() {
 
@@ -25,7 +25,7 @@ function Deletar_programador() {
                     <img src="../public/img/emoji_triste.jpg" alt="teste" />
                 </div>
                 <p className="btnHome">
-                    <a href="https://programer-list.netlify.app/">Home</a>
+                    <Link to="/">Home</Link>
                 </p>
             </div>
             <br />

@@ -8,7 +8,7 @@ function Footer() {
                     <li>
                         <div className="container">
                             <a href="https://www.linkedin.com/in/joao-gabriel-grande/" target="_blank">
-                                <img src="../public/linkedin.svg" alt="Linkedin Icon" />
+                                <img src="../linkedin.svg" alt="Linkedin Icon" />
                             </a>
                         </div>
                     </li>

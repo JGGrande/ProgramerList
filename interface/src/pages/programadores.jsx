@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios";
 import Card from "../components/card"
 import "../css/programadores.css"
+import { Link } from "react-router-dom";
 
 
 function Programadores() {
@@ -45,7 +46,7 @@ function Programadores() {
             </div>
             <div className="containerBtn">
                 <p>
-                    <a href="https://programer-list.netlify.app/adicionar_programador">Adicionar Programador</a>
+                    <Link to="/adicionar_programador">Adicionar Programador</Link>
                 </p>
             </div>
             <div className="flex">

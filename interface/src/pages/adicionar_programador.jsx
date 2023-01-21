@@ -7,6 +7,7 @@ import Modal from "react-modal"
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { Link } from "react-router-dom"
 
 const validationPost = yup.object({
     nome: yup.string().required("Campo usuario não pode estar vazio!").max(200),
@@ -162,7 +163,7 @@ function Adiconar_Programador() {
                 <br />
                 <br />
                 <p className="btnHome" >
-                    <a href="https://programer-list.netlify.app/">Home</a>
+                    <Link to="/">Home</Link>
                 </p>
             </Modal>
         </div>
