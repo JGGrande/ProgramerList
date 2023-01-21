@@ -19,8 +19,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Header />
         <Route path='/' element={<App />} />
         <Route path='/programadores' element={<Programadores />} />
         <Route path='/sobre' element={<Sobre />} />
