@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     axios.get("https://programer-list-requests.onrender.com")
       .then((response) => {
-        setDados(response.data.dados)
+        setDados(response.data.programadores)
       }).catch(() => {
         console.log("algo deu errado")
       })
