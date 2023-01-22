@@ -15,4 +15,5 @@ await DataBase.query(`select * from programadores `, (error, result) => {
 
 
 });
+//console.log(dados)
 export default dados

@@ -33,6 +33,6 @@ function exportarDados(res, array) {
 
             res.send({ programadores: array });
             resolve()
-        }, 300)
+        }, 500)
     })
 }

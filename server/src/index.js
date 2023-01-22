@@ -15,6 +15,7 @@ import Create from "./routes/create.js";
 import Delete from "./routes/delete.js";
 import ReadNoParams from "./routes/ReadNoParams.js";
 import Categoria from "./app/models/categoria.js";
+import dados from "./app/models/ReadModel.js";
 
 
 
@@ -37,13 +38,32 @@ app.get("/", async (req, res) => {
     await DataBase.query("select * from  programadores ORDER BY RAND() limit 5 ", (error, result) => {
         let dados = []
         result.forEach(e => {
-            dados.push(e)
+            DataBase.query(`select categoria from categoria where id = ${e.id_categoria}`, (error, result) => {
+                const { categoria } = result[0]
+                e.categoria = categoria
+                //console.log(e)
+                dados.push(e)
+            });
 
         });
-        res.send({ dados })
     })
 
+    exportarDados(res, dados)
+
 })
+
+function exportarDados(res, array) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            //verifica se tem o programador 
+            if (!array.length)
+                return res.status(400).send({ error: "Error ao se conectar ao servidor" })
+
+            res.send({ programadores: array });
+            resolve()
+        }, 500)
+    })
+}
 
 app.get("/teste", (req, res) => {
     res.send(app.request)
