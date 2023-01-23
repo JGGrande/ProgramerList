@@ -21,7 +21,7 @@ import dados from "./app/models/ReadModel.js";
 
 app.use(bodyParser.json())
 app.use(cors())
-app.use('/programadores', Express.static('./src/app/uploads'))
+app.use('/imagem_programadores', Express.static('./src/app/uploads'))
 
 const upload = multer({
     storage: multer.diskStorage({

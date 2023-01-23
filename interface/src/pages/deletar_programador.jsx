@@ -22,7 +22,7 @@ function Deletar_programador() {
                     <h1>Programador Deletado</h1>
                 </div>
                 <div className="imagemTriste">
-                    <img src="../public/img/emoji_triste.jpg" alt="teste" />
+                    <img src="../emoji_triste.jpg" alt="teste" />
                 </div>
                 <p className="btnHome">
                     <Link to="/">Home</Link>
