@@ -53,6 +53,7 @@ function Adiconar_Programador() {
 
     function openModal() {
         setIsOpen(true)
+        const fade = document.querySelector("#fade")
         fade.style.display = 'block'
     }
     function closeModal() {
@@ -163,7 +164,7 @@ function Adiconar_Programador() {
                 <br />
                 <br />
                 <p className="btnHome" >
-                    <Link to="/">Home</Link>
+                    <Link to="/" onClick={closeModal}>Home</Link>
                 </p>
             </Modal>
         </div>

@@ -18,9 +18,9 @@ const validationPost = yup.object({
             return value && value > 0
         }),
     categoria: yup.string().required("Campo categoria não pode estar vazio!"),
-    foto: yup.mixed().test("fileSize", "Limite de 5 MB! ", value => {
-        return value && value[0].size <= 5000000;
-    })
+    foto: yup.mixed().test("fileSize", "Limite de 2 MB! ", value => {
+        return value && value[0].size <= 2000000;
+    }).required("Compo foto não pode estra vazio")
         .test("type", "Formato não suportado!", (value) => {
             return value && value[0].type === "image/png" || value[0].type === "image/jpeg" || value[0].type === "image/jpg"
         })
@@ -50,7 +50,6 @@ function Editar_programador() {
     }
     function closeModal() {
         setIsOpen(false)
-        const fade = document.querySelector("#fade")
         fade.style.display = 'none'
     }
 
@@ -92,6 +91,38 @@ function Editar_programador() {
         pegarCategorias()
     }, [])
 
+    useEffect(() => {
+        async function pegarDadosParaFormulario() {
+            await axios.get(`https://programer-list-requests.onrender.com/programador/${id}`)
+                .then((Response) => {
+                    const dadosFormulario = Response.data.programadores[0]
+
+                    const inputNome = document.querySelector("#nome");
+                    const inputIdade = document.querySelector("#idade");
+                    const inputFoto = document.querySelector("#foto");
+                    const inputCategoria = document.querySelector("#select")
+
+
+                    //console.log(dadosFormulario)
+                    //console.log(inputCategoria.options.length)
+                    const { nome, idade, categoria, foto } = dadosFormulario
+
+                    inputNome.value = nome
+                    inputIdade.value = idade
+                    //inputFoto.value = foto
+
+                    console.log(inputFoto)
+                    for (let i = 0; i < inputCategoria.options.length; i++) {
+                        if (inputCategoria.options[i].text === categoria) {
+                            inputCategoria.selectedIndex = i
+                            break;
+                        }
+                    }
+
+                }).catch(() => console.log("ERROR da requisição"))
+        }
+        pegarDadosParaFormulario()
+    }, []);
 
     return (
         <div className="adicionar_programador">
@@ -104,18 +135,18 @@ function Editar_programador() {
 
                         <div className="fields">
                             <label>Nome</label><br />
-                            <input type="text" className="texto" name="nome" {...register("nome")} />
+                            <input type="text" className="texto" name="nome" id="nome" {...register("nome")} />
                             <p>{errors.nome?.message}</p>
                         </div>
                         <div className="fields">
                             <label>Idade</label><br />
-                            <input type="number" className="numero" name="idade" {...register("idade")} />
+                            <input type="number" className="numero" name="idade" id="idade" {...register("idade")} />
                             <p>{errors.idade?.message}</p>
                         </div>
 
                         <div className="fields">
                             <label>Foto</label><br />
-                            <input type="file" className="imagem" name="foto"  {...register("foto")} onChange={e => setImagem(e.target.files[0])} />
+                            <input type="file" className="imagem" name="foto" id="foto"  {...register("foto")} onChange={e => setImagem(e.target.files[0])} />
                             <p className="error">{errors.foto?.message}</p>
                         </div>
 
@@ -142,7 +173,7 @@ function Editar_programador() {
                     </form>
                 </div>
             </div>
-            <div className="fade" id="fade">aaa</div>
+            <div className="fade" id="fade"></div>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -156,8 +187,8 @@ function Editar_programador() {
                 <br />
                 <br />
                 <br />
-                <p className="btnHome" >
-                    <Link to="https://programer-list.netlify.app/">Home</Link>
+                <p className="btnHome" onClick={closeModal} >
+                    <Link to="/">Home</Link>
                 </p>
             </Modal>
 

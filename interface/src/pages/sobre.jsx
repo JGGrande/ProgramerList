@@ -4,7 +4,7 @@ function Sobre() {
     return (
         <div className="flexSobre">
             <div className="eu">
-                <img src="../joao.png" alt="Foto de João Gabriel Grande" />
+                <img src="../img/joao.png" alt="Foto de João Gabriel Grande" />
             </div>
             <div className="infomacoes">
                 <h1>João Gabriel Grande</h1>

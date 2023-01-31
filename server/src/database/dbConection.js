@@ -5,5 +5,11 @@ const DataBase = mysql.createConnection({
     password: 'cW06x3kpl765otfnu31k',
     database: 'byqgmyp2imcsq97830gp',
 })
+/*const DataBase = mysql.createConnection({
+    host: '',
+    user: 'root',
+    password: '1234',
+    database: 'teste_gazin',
+})*/
 
 export default DataBase;

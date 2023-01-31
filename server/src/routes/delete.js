@@ -13,7 +13,7 @@ export default async function Delete(req, res) {
 
         //console.log(result[0])
 
-        const { foto } = result[0]
+        const { foto } = result[0] || {};
 
         //console.log(foto)
 
@@ -21,7 +21,7 @@ export default async function Delete(req, res) {
             fs.unlink(`./src/app/uploads/${foto}`, (err => {
                 if (err) console.log(err)
                 else {
-                    console.log("Deletado")
+                    console.log("Deletado a imagem")
                 }
             }));
         } catch (error) {
@@ -30,18 +30,20 @@ export default async function Delete(req, res) {
 
     })
 
-
-
     //fs.unlink("./app/uploads/joao.png").then(console.log).chatch(console.error)
 
-    await DataBase.query(`delete from programadores  where id = ${id};`, (error, result) => {
-        //let dados = []
-        //result.forEach(e => {
-        //dados.push(e)
+    try {
+        await DataBase.query(`delete from programadores  where id = ${id};`, (error, result) => {
+            //let dados = []
+            //result.forEach(e => {
+            //dados.push(e)
 
-        //});
-        //res.send({ programadores: dados })
-        //console.log(result, error)
-    })
+            //});
+            //res.send({ programadores: dados })
+            //console.log(result, error)
+        })
+    } catch (err) {
+        console.log("erro na query de deletar")
+    }
     res.send({ menssage: "Deletado com sucesso!" })
 }

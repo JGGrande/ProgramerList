@@ -1,6 +1,5 @@
 import DataBase from "../database/dbConection.js";
 
-
 export default async function Update(req, res) {
 
     const { id } = req.params
@@ -19,6 +18,17 @@ export default async function Update(req, res) {
         return res.status(400).send({ error: "Idade faltando!" })
     if (!categoria)
         return res.status(400).send({ error: "Categoria faltando!" })
+
+    try {
+        fs.unlink(`./src/app/uploads/${foto}`, (err => {
+            if (err) console.log(err)
+            else {
+                console.log("Deletado")
+            }
+        }));
+    } catch (error) {
+        console.log(error)
+    }
 
 
     await DataBase.query(`update programadores set nome = '${nome}', idade = ${idade}, foto = '${foto}', id_categoria = (select id from categoria where categoria = '${categoria}') where id = ${id};`, (error, result) => {

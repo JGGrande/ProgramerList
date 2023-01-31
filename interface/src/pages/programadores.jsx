@@ -11,15 +11,19 @@ function Programadores() {
 
     const [dados, setDados] = useState([])
 
+
     useEffect(() => {
-        axios.get("https://programer-list-requests.onrender.com/programadores", busca)
+        axios.get("https://programer-list-requests.onrender.com/programadores")
             .then((response) => {
                 console.log(response.data.programadores)
                 setDados(response.data.programadores)
             }).catch(() => {
                 console.log("algo deu errado")
             })
+
     }, [])
+
+
 
 
     return (
@@ -51,7 +55,7 @@ function Programadores() {
             </div>
             <div className="flex">
                 {dados.map((e) => {
-                    console.log(e.foto)
+                    //console.log(e)
                     return (
                         <div className="cardItem">
                             <Card nome={e.nome} idade={e.idade} categoria={e.categoria} img={e.foto} id={e.id} />

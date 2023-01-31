@@ -16,6 +16,7 @@ import Delete from "./routes/delete.js";
 import ReadNoParams from "./routes/ReadNoParams.js";
 import Categoria from "./app/models/categoria.js";
 import dados from "./app/models/ReadModel.js";
+import ReadById from "./routes/ReadByIndex.js";
 
 
 
@@ -36,7 +37,7 @@ const upload = multer({
 });
 app.get("/", async (req, res) => {
     await DataBase.query("select * from  programadores ORDER BY RAND() limit 5 ", (error, result) => {
-        let dados = []
+        const dados = new Array()
         result.forEach(e => {
             DataBase.query(`select categoria from categoria where id = ${e.id_categoria}`, (error, result) => {
                 const { categoria } = result[0]
@@ -48,7 +49,7 @@ app.get("/", async (req, res) => {
         });
     })
 
-    exportarDados(res, dados)
+    await exportarDados(res, dados)
 
 })
 
@@ -61,7 +62,7 @@ function exportarDados(res, array) {
 
             res.send({ programadores: array });
             resolve()
-        }, 500)
+        }, 100)
     })
 }
 
@@ -70,8 +71,9 @@ app.get("/teste", (req, res) => {
 })
 
 //mostrar
-app.get('/programadores', ReadNoParams)
-app.get('/programadores/:nome', Read)
+app.get('/programadores', ReadNoParams);
+app.get('/programadores/:nome', Read);
+app.get('/programador/:id', ReadById);
 app.get('/categoria', Categoria)
 //cirar 
 app.post('/adicionar_programador', upload.single('foto'), Create)
@@ -81,6 +83,5 @@ app.patch('/atualizar_programador/:id', upload.single('foto'), Update)
 app.delete("/deletar_programador/:id", Delete)
 
 app.listen("3000", () => {
-
     console.log("Server is runing on http://localhost:3000");
 });

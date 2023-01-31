@@ -53,3 +53,75 @@
 .navbar ul li a:hover {
     color: rgb(107, 183, 11);
 }
+
+.checkbtn {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.modal-content-navbar {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+
+    width: 250px;
+    height: 500px;
+    border-radius: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    left: 18%;
+    top: 20%;
+    z-index: 10;
+    background-color: #FFF;
+}
+
+.navbarModal {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    justify-content: flex-start;
+}
+
+.navbarModal ul {
+    list-style: none;
+}
+
+.navbarModal ul li .linkModal {
+    text-decoration: none;
+    font-family: Ubuntu;
+    box-sizing: border-box;
+    color: rgb(107, 183, 11);
+    font-size: 30px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+
+    .header {
+        width: 100%;
+    }
+
+    .navbar {
+        width: 70px;
+        display: none;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import Modal from "react-modal";
 import "../css/card.css"
 
 function Card(props) {
@@ -20,11 +21,26 @@ function Card(props) {
 
 
     if (!props.id) {
-        //alert("algo deu errado")
+        console.log("Sem id")
+    }
+
+
+    const [modalIsOpen, setIsOpen] = useState(false)
+
+    const [mensagem, setMensagem] = useState("Sucesso")
+
+    const fade = document.querySelector("#fade")
+
+    function openModal() {
+        setIsOpen(true)
+        fade.style.display = 'block'
+    }
+    function closeModal() {
+        setIsOpen(false)
+        fade.style.display = 'none'
     }
 
     //console.log(img)
-
     return (
         <div className="card">
             <div className="containerImg">
@@ -42,12 +58,30 @@ function Card(props) {
                     </span>
                 </p>
                 <p className="btn-delet" id="delete">
-                    <Link to={"/deletar_programador/" + props.id}><strong>Deletar</strong></Link>
+                    <a href="#" onClick={openModal}><strong>Deletar</strong></a>
                     <span className="material-symbols-outlined">
                         delete
                     </span>
                 </p>
             </div>
+
+            <div className="fade" id="fade"></div>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                className="modal-content"
+                overlayClassName="modal-overlay"
+            >
+                <br />
+                <h1>Deseja mesmo deletar esse programador para sempre?</h1>
+                <br />
+                <p className="botoes" onClick={closeModal} >
+                    <p className="btn-delet" style={{ marginRight: "20px" }}>
+                        <Link to={"/deletar_programador/" + props.id}>Deletar</Link>
+                    </p>
+                    <p className="btn-edit" onClick={closeModal}><a href="#">Não Deletar</a> </p>
+                </p>
+            </Modal>
 
         </div >
     )

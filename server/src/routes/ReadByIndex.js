@@ -1,11 +1,11 @@
 import DataBase from "../database/dbConection.js";
 
-export default async function Read(req, res) {
+export default async function ReadById(req, res) {
 
     const programador = req.params
 
     const dadosBody = new Array()
-    await DataBase.query(`select * from programadores where nome LIKE '${programador.nome}%' `, (error, result) => {
+    await DataBase.query(`select * from programadores where id LIKE '${programador.id}%' `, (error, result) => {
 
         result.forEach(e => {
 
