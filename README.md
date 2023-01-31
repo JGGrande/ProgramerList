@@ -1,5 +1,5 @@
 # ProgramerList
-Site de crude que lista, cria, edita e deleta programadores! 
+Site de CRUD que lista, cria, edita e deleta programadores! 
 
 # Link para Testar o site
 
